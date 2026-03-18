@@ -11,7 +11,13 @@ function multiply (a,b) {
 }
 
 function divide (a,b) {
-    return a/b;
+    if (b == 0) {
+        //report error when divide by 0
+        return "Divide by 0 :(";
+    } else {
+        return a/b;
+    }
+    
 }
 
 function operate (num1, op, num2) {
@@ -20,10 +26,15 @@ function operate (num1, op, num2) {
     if (op == "subtract") result = subtract(num1, num2);
     if (op == "multiply") result = multiply(num1, num2);
     if (op == "divide") result = divide(num1, num2);
-    return result;
-   
+    return result;  
+}
 
-
+function clearMemory () {
+    num1 = '';
+    num2 = '';
+    numTempt = '';
+    op = '';    
+    result = '';
 }
 
 let num1;
@@ -70,16 +81,22 @@ operatorButtons.forEach(button => button.addEventListener("click", (e) => {
         }
         
         
-    } else {        
-        num2 = +numTempt;
-        console.log(`num1:${num1}, op: ${op}, num2: ${num2}`);//can be deleted later
-        result = operate (num1, op, num2); 
-        displayWindow.textContent = result;
-        num1 = '';
-        num2 = '';
-        numTempt = '';
-        op = '';    
-        result = '';
+    } else {
+        num2 = numTempt;
+        console.log(`num2: ${num2} type: ${typeof num2}`);
+        
+        if (op == undefined || num2 == '') {
+            //report error when not entered completely
+            displayWindow.textContent = "Partial input :(";
+            clearMemory();
+        }  else {
+            num2 = +numTempt;
+            console.log(`num1:${num1}, op: ${op}, num2: ${num2}`);//can be deleted later
+            result = operate (num1, op, num2); 
+            displayWindow.textContent = result;           
+            clearMemory();
+        }     
+        
         
     }
 
