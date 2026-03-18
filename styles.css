@@ -1,0 +1,67 @@
+body {
+    font-family: 'FiraCode', 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 10px solid black;
+    margin: 20px;
+    padding: 80px;
+    width: 500px;
+    height: 560px;
+    border-radius: 25px;
+}
+
+.display {
+    border: 2px solid saddlebrown;
+    padding: 5px;
+    text-align: end;
+    border-radius: 5px;
+}
+
+.buttons {
+   
+    display: flex;
+    flex-direction: row;
+    padding: 25px 0px;
+    
+    
+}
+
+.numbers {
+    width: 450px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.operators {
+    width: 350px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+button {
+    width: 79.5px;
+    height: 79px;
+    font-size: 50px;
+    border-radius: 5px;
+}
+
+.operators button {
+    background-color: rgb(187, 168, 181);
+}
+
+#clear {
+    background-color: rgb(209, 98, 98);
+}
+
