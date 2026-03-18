@@ -57,7 +57,7 @@ operatorButtons.forEach(button => button.addEventListener("click", (e) => {
         if (clickedButton == "add" ) op = "add";
         if (clickedButton == "subtract" ) op = "subtract";
         if (clickedButton == "multiply" ) op = "multiply";
-        if (clickedButton == "multiply" ) op = "multiply";
+        if (clickedButton == "divide" ) op = "divide";
         console.log(`op: ${op}`);
     } else {        
         num2 = +numTempt;
