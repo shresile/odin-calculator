@@ -65,7 +65,7 @@ operatorButtons.forEach(button => button.addEventListener("click", (e) => {
             num2 = +numTempt;
             console.log(`num1:${num1}, op: ${op}, num2: ${num2}`);//can be deleted later
             result = operate (num1, op, num2); 
-            displayWindow.textContent = result;
+            displayWindow.textContent = Math.round(result * 1000) / 1000 ;
             num1 = result;
             op = clickedButton;
             num2 = '';
@@ -93,7 +93,7 @@ operatorButtons.forEach(button => button.addEventListener("click", (e) => {
             num2 = +numTempt;
             console.log(`num1:${num1}, op: ${op}, num2: ${num2}`);//can be deleted later
             result = operate (num1, op, num2); 
-            displayWindow.textContent = result;           
+            displayWindow.textContent = Math.round(result * 1000) / 1000;           
             clearMemory();
         }     
         
@@ -103,6 +103,12 @@ operatorButtons.forEach(button => button.addEventListener("click", (e) => {
     
 
 }));
+
+//setting `clear` button
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", () => {
+    clearMemory();
+});
 
 
 
