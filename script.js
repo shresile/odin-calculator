@@ -40,6 +40,10 @@ function clearMemory () {
 
 }
 
+function backspace () {
+
+}
+
 let num1;
 let num2;
 let op;
@@ -124,6 +128,18 @@ clearButton.addEventListener("click", () => {
     displayWindow.textContent = "";
     clearMemory();
 });
+
+//setting `backspace` button
+const backspaceButton = document.querySelector("#backspace");
+backspaceButton.addEventListener("click", () => {
+    numTempt = numTempt.split("");
+    numTempt.pop();
+    numTempt = numTempt.join("");
+    console.log(numTempt);
+    displayWindow.textContent = numTempt;
+
+});
+
 
 
 
