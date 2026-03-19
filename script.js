@@ -40,9 +40,6 @@ function clearMemory () {
 
 }
 
-function backspace () {
-
-}
 
 let num1;
 let num2;
@@ -138,6 +135,47 @@ backspaceButton.addEventListener("click", () => {
     console.log(numTempt);
     displayWindow.textContent = numTempt;
 
+});
+
+//Add keyboard support
+const digitKeys = "1234567890.";
+const operatorKeys = "+-*/=";
+document.addEventListener("keypress", (e) => {
+    
+    if (digitKeys.includes(e.key)) {
+        if (e.key == ".") {            
+        document.getElementById(`floatPoint`).click();
+        } else {
+        document.getElementById(`${e.key}`).click();
+        }
+        
+    } else if (operatorKeys.includes(e.key)) {
+        switch (e.key) {
+            case "/":
+                document.getElementById("divide").click();                
+                break;
+            case "*":
+                document.getElementById("multiply").click();
+                break;
+            case "+":
+                document.getElementById("add").click();                
+                break;
+            case "-":
+                document.getElementById("subtract").click();                
+                break;
+            case "=":
+                document.getElementById("equal").click();                
+                break;
+            
+
+
+        }
+    } else if (e.key === "Backspace") {
+        document.getElementById("backspace").click();                
+
+    } else if (e.key === "Enter") {
+        document.getElementById("equal").click();  
+    } 
 });
 
 
